@@ -1,7 +1,9 @@
 from math import sqrt, ceil
+from functools import reduce
+from itertools import combinations
 
 
-def is_prime(number):
+def is_prime(number, cache=None):
     '''Check if a number is a prime number'''
     if number <= 1:
         return False
@@ -14,15 +16,22 @@ def is_prime(number):
     elif number % 3 == 0:
         return False
     else:
-        limit = int(sqrt(number)) # so that f*f <= number
+        if cache is None:
+            cache = {}
+        elif number in cache:
+            return cache[number]
+        limit = int(sqrt(number)) # so that f*f < number
         f = 5
         while f <= limit:
             if number % f == 0:  # 6k-1
+                cache[number] = False
                 return False
             if number % (f+2) == 0: #6k+1
+                cache[number] = False
                 return False
             f += 6
-    return True
+        cache[number] = True
+        return True
 
 
 def prime_factors(number, cache=None):
@@ -72,26 +81,19 @@ def prime_factors(number, cache=None):
                     return all
             f += 6
         if number != 1:
-            # this is always a prime number, adde it to the cache
+            # this is always a prime number, add it to the cache
             cache[number] = [number]
             all.append(number)
     return all
 
 
 def factors(number, cache=None):
+    prod = lambda x, y: x*y
     primes = prime_factors(number, cache)
     all = set(primes)
     all.add(1)
-    for i, p in enumerate(primes):
-        row = primes[i+1:] + primes[0:i]
-        remaining = row
-        while remaining:
-            f = []
-            for v in remaining:
-                f.append(p*v)
-            all.update(f)
-            p = f[0]
-            remaining = remaining[1:]
-    all.discard(number)
+    for n in range(2, len(primes)):
+        for combos in combinations(primes, n):
+            all.add(reduce(prod, combos))
     return all
 
