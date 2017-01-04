@@ -1,3 +1,5 @@
+"""https://projecteuler.net/problem=205
+"""
 
 
 def dice(faces=6, total=1):
@@ -17,17 +19,12 @@ def dice(faces=6, total=1):
 def problem205():
     d4 = dice(4, 9)
     d6 = dice(6, 6)
-    print(sum(d4.values()))
-    print(sum(d6.values()))
     start = min(min(d4), min(d6))
     end = max(max(d4), max(d6))
     p = 0
-    k = 1
     for k in range(1, end):
         for i in range(start, end+1):
-            f4 = d4.get(i, 0)
-            f6 = d6.get(i-k, 0)
-            p += f4*f6
+            p += d4.get(i, 0)*d6.get(i-k, 0)
     return p
 
 

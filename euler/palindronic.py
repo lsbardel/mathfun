@@ -1,3 +1,5 @@
+"""https://projecteuler.net/problem=4
+"""
 
 
 def palindromic(digits):
