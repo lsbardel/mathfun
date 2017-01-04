@@ -18,4 +18,3 @@ if __name__ == '__main__':
     else:
         num = 1000
     print(pitogorean_triplet(num))
-

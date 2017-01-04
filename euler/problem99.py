@@ -1,6 +1,9 @@
+"""https://projecteuler.net/problem=99
+"""
 from math import log
 
-def problem99(numbers):
+
+def largest_exponentail(numbers):
     val = 0
     imax = 0
     for i, ba in enumerate(numbers, 1):
@@ -13,6 +16,8 @@ def problem99(numbers):
 
 if __name__ == '__main__':
     import requests
-    text = requests.get('https://projecteuler.net/project/resources/p099_base_exp.txt').text
+    text = requests.get(
+        'https://projecteuler.net/project/resources/p099_base_exp.txt'
+    ).text
     numbers = [[int(l) for l in line.split(',')] for line in text.split('\n')]
-    print(problem99(numbers))
+    print(largest_exponentail(numbers))

@@ -17,4 +17,3 @@ if __name__ == '__main__':
     start = time.time()
     print(problem41())
     print('%s seconds' % (time.time() - start))
-

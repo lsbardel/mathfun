@@ -1,9 +1,10 @@
 from functools import reduce
-from fractions import gcd
+from math import gcd
 
 
 def lcm(a, b):
     return a * b // gcd(a, b)
+
 
 def smallest_multiple(number):
     return reduce(lcm, range(1, number+1))

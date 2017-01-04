@@ -3,7 +3,7 @@ from itertools import product
 
 def problem209():
     vals = {}
-    for i in product([0,1], repeat=6):
+    for i in product([0, 1], repeat=6):
         h = i[0] ^ (i[1] and i[2])
         j = i[1:] + (h,)
         if i in vals and j in vals:

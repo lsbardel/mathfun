@@ -1,6 +1,7 @@
 import sys
-if sys.version_info[0] == 2:
-    from itertools import izip as zip
+
+
+URL = 'https://projecteuler.net/project/resources/p067_triangle.txt'
 
 
 def triangle_path(triangle):
@@ -30,18 +31,20 @@ test = '''\
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23'''
 
+
 def read_data():
     if len(sys.argv) > 1 and sys.argv[1] == '18':
         text = test
     else:
         import requests
-        text = requests.get('https://projecteuler.net/project/resources/p067_triangle.txt').text
-    return [[int(v) for v in line.split(' ')] for line in text.split('\n') if line]
+        text = requests.get(URL).text
+    return [[int(v) for v in line.split(' ')]
+            for line in text.split('\n') if line]
 
 
 if __name__ == '__main__':
     import timeit
-    t = timeit.timeit('triangle_path(triangle)','''\
+    t = timeit.timeit('triangle_path(triangle)', '''\
 from __main__ import triangle_path, read_data
 triangle = read_data()''', number=10)
     print(t)

@@ -1,3 +1,6 @@
+"""https://projecteuler.net/problem=28
+"""
+
 
 def problem28(number):
     s = 1

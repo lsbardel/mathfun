@@ -21,7 +21,8 @@ def test_strings(size=500):
     s1 = ''.join(all)
     shuffle(all)
     s2 = ''.join(all)
-    return s1, s2;
+    return s1, s2
+
 
 if __name__ == '__main__':
     import timeit
@@ -29,7 +30,13 @@ if __name__ == '__main__':
     num = 100
     if len(sys.argv) > 1:
         num = int(sys.argv[1])
-    print(timeit.timeit('anagram1(s1, s2)', 'from __main__ import test_strings, anagram1;'
-        's1, s2 = test_strings(%s)' % num, number=1000))
-    print(timeit.timeit('anagram2(s1, s2)', 'from __main__ import test_strings, anagram2;'
-        's1, s2 = test_strings(%s)' % num, number=1000))
+    print(timeit.timeit(
+        'anagram1(s1, s2)',
+        'from __main__ import test_strings, anagram1;'
+        's1, s2 = test_strings(%s)' % num, number=1000)
+    )
+    print(timeit.timeit(
+        'anagram2(s1, s2)',
+        'from __main__ import test_strings, anagram2;'
+        's1, s2 = test_strings(%s)' % num, number=1000)
+    )

@@ -1,3 +1,5 @@
+from functools import reduce
+
 
 example = '''
 73167176531330624919225119674426574742355349194934
@@ -22,9 +24,6 @@ example = '''
 71636269561882670428252483600823257530420752963450'''
 
 
-from functools import reduce
-
-
 def adjacent_product(n, numbers):
     value = 0
     for i in range(n, len(numbers)):
@@ -34,7 +33,7 @@ def adjacent_product(n, numbers):
 
 if __name__ == '__main__':
     import sys
-    numbers = example.replace('\n','')
+    numbers = example.replace('\n', '')
     if len(sys.argv) > 1:
         num = int(sys.argv[1])
     else:

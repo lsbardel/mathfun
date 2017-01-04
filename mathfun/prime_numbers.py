@@ -1,4 +1,4 @@
-from math import sqrt, ceil
+from math import sqrt
 from functools import reduce
 from itertools import combinations
 
@@ -11,7 +11,7 @@ def is_prime(number, cache=None):
         return True
     elif number % 2 == 0:
         return False
-    elif number < 9: # already excluded 4, 6 & 8
+    elif number < 9:  # already excluded 4, 6 & 8
         return True
     elif number % 3 == 0:
         return False
@@ -20,13 +20,13 @@ def is_prime(number, cache=None):
             cache = {}
         elif number in cache:
             return cache[number]
-        limit = int(sqrt(number)) # so that f*f < number
+        limit = int(sqrt(number))  # so that f*f < number
         f = 5
         while f <= limit:
             if number % f == 0:  # 6k-1
                 cache[number] = False
                 return False
-            if number % (f+2) == 0: #6k+1
+            if number % (f+2) == 0:  # 6k+1
                 cache[number] = False
                 return False
             f += 6
@@ -55,13 +55,13 @@ def prime_factors(number, cache=None):
         all = []
         while number % 2 == 0:
             all.append(2)
-            number = number // 2
+            number //= 2
             if number in cache:
                 all.extend(cache[number])
                 return all
         while number % 3 == 0:
             all.append(3)
-            number = number // 3
+            number //= 3
             if number in cache:
                 all.extend(cache[number])
                 return all
@@ -75,7 +75,7 @@ def prime_factors(number, cache=None):
                     return all
             while number % (f+2) == 0:
                 all.append(f+2)
-                number = number // (f+2)
+                number //= (f+2)
                 if number in cache:
                     all.extend(cache[number])
                     return all
@@ -88,7 +88,6 @@ def prime_factors(number, cache=None):
 
 
 def factors(number, cache=None):
-    prod = lambda x, y: x*y
     primes = prime_factors(number, cache)
     all = set(primes)
     all.add(1)
@@ -97,3 +96,6 @@ def factors(number, cache=None):
             all.add(reduce(prod, combos))
     return all
 
+
+def prod(x, y):
+    return x*y

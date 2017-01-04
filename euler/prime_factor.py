@@ -1,23 +1,23 @@
-import math
+"""https://projecteuler.net/problem=3
+"""
 
 
 def largest_prime_factor(number):
-    '''Euler problem 3'''
-    all = []
     if number <= 3:
-        all.append(number)
         return number
-    while number > 2 and not number % 2: # remove powers of twos
-        number = number // 2
-        all.append(2)
+
+    result = []
+    while number > 2 and not number % 2:  # remove powers of twos
+        number //= 2
+        result.append(2)
     f = 3
     while f*f < number:
         while not number % f:
-            all.append(f)
+            result.append(f)
             number = number // f
-        f += 2 # we have already dealt with
-    all.append(number)
-    return all
+        f += 2  # we have already dealt with
+    result.append(number)
+    return result
 
 
 if __name__ == '__main__':
@@ -27,4 +27,3 @@ if __name__ == '__main__':
     else:
         num = 600851475143
     print(largest_prime_factor(num))
-

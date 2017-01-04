@@ -1,10 +1,10 @@
-from functools import reduce
+"""https://projecteuler.net/problem=6
+"""
 
 
 def square_diference(number):
     nsum = number * (number + 1) // 2
     return nsum*(nsum - (2*number + 1) // 3)
-
 
 
 if __name__ == '__main__':

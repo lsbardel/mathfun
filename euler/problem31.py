@@ -1,4 +1,5 @@
-from itertools import combinations
+"""https://projecteuler.net/problem=31
+"""
 
 
 def count_money(start, money, idx=0, stop=200):
@@ -16,11 +17,5 @@ def count_money(start, money, idx=0, stop=200):
     return count
 
 
-
-def problem31():
-    return count_money(0, [100, 50, 20, 10, 5, 2, 1]) + 1
-
-
-
 if __name__ == '__main__':
-    print(problem31())
+    print(count_money(0, [100, 50, 20, 10, 5, 2, 1]) + 1)

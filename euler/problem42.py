@@ -1,7 +1,8 @@
+"""https://projecteuler.net/problem=42
+"""
 from functools import reduce
 from math import ceil, sqrt
-
-from mathfun.utils import ascii_letters
+from string import ascii_letters
 
 positions = dict(((l, p) for p, l in enumerate(ascii_letters, 1)))
 
@@ -28,7 +29,8 @@ def problem42(names):
 
 if __name__ == '__main__':
     import requests
-    text = requests.get('https://projecteuler.net/project/resources/p042_words.txt').text
+    text = requests.get(
+        'https://projecteuler.net/project/resources/p042_words.txt'
+    ).text
     names = [n[1:-1].lower() for n in text.split(',') if n]
     print(problem42(names))
-

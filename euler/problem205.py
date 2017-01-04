@@ -21,7 +21,6 @@ def problem205():
     print(sum(d6.values()))
     start = min(min(d4), min(d6))
     end = max(max(d4), max(d6))
-    total = 0
     p = 0
     k = 1
     for k in range(1, end):

@@ -17,6 +17,3 @@ def problem53(N=100, T=1000000):
 
 if __name__ == '__main__':
     print(problem53())
-
-
-

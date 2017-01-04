@@ -1,13 +1,5 @@
-from mathfun.utils import zip
-
-
-def problem112():
-    bouncy = 0
-    total = 100
-    while float(bouncy)/total < 0.99:
-        total += 1
-        bouncy += 1 if isbouncy(total) else 0
-    return total
+"""https://projecteuler.net/problem=112
+"""
 
 
 def isbouncy(number):
@@ -24,6 +16,15 @@ def isbouncy(number):
                 bouncy = True
                 break
     return bouncy
+
+
+def problem112():
+    bouncy = 0
+    total = 100
+    while bouncy/total < 0.99:
+        total += 1
+        bouncy += 1 if isbouncy(total) else 0
+    return total
 
 
 if __name__ == '__main__':

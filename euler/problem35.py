@@ -1,5 +1,5 @@
-from itertools import permutations
-
+"""https://projecteuler.net/problem=35
+"""
 from mathfun.prime_numbers import is_prime
 
 
@@ -31,4 +31,3 @@ if __name__ == '__main__':
     else:
         num = 1000000
     print('primes: %d, circular: %d' % circular_primes(num))
-

@@ -1,3 +1,5 @@
+from functools import reduce
+
 
 def multiple_sum():
     all = set((5*i for i in range(200)))
@@ -6,8 +8,8 @@ def multiple_sum():
 
 
 def multiple_sum2(number):
-    num = lambda x, y : x + y if (y % 3 == 0 or y % 5 == 0) else x
-    return reduce(num, range(number))
+    return reduce(lambda x, y: x + y if (y % 3 == 0 or y % 5 == 0) else x,
+                  range(number))
 
 
 if __name__ == '__main__':

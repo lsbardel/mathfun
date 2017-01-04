@@ -1,3 +1,5 @@
+"""https://projecteuler.net/problem=14
+"""
 
 
 def collatz(n, cache):
@@ -22,7 +24,7 @@ def longest_collatz(number):
         if count > max_count:
             max_count = count
             max_number = n
-    return (max_number, max_count)
+    return max_number, max_count
 
 
 if __name__ == '__main__':

@@ -1,10 +1,14 @@
-import requests
+"""https://projecteuler.net/problem=22
+"""
+from string import ascii_letters
 
-from mathfun.utils import ascii_letters
+import requests
 
 
 def problem22():
-    text = requests.get('https://projecteuler.net/project/resources/p022_names.txt').text
+    text = requests.get(
+        'https://projecteuler.net/project/resources/p022_names.txt'
+    ).text
     names = [t[1:-1].lower() for t in text.split(',') if t]
     scores = dict(((letter, pos) for pos, letter
                    in enumerate(ascii_letters, 1)))
