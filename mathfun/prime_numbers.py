@@ -35,14 +35,14 @@ def is_prime(number, cache=None):
 
 
 def prime_factors(number, cache=None):
-    '''Return all prime factors of number.
+    """Return all prime factors of number.
 
     For example::
 
         prime_factors(18) = [2, 3, 3]
 
-    Cache is a dictionary which can be used to speedup repeted evaluations
-    '''
+    Cache is a dictionary which can be used to speedup repeated evaluations
+    """
     if number <= 1:
         return []
     elif number <= 3:
@@ -52,49 +52,49 @@ def prime_factors(number, cache=None):
             cache = {}
         elif number in cache:
             return cache[number]
-        all = []
+        result = []
         while number % 2 == 0:
-            all.append(2)
+            result.append(2)
             number //= 2
             if number in cache:
-                all.extend(cache[number])
-                return all
+                result.extend(cache[number])
+                return result
         while number % 3 == 0:
-            all.append(3)
+            result.append(3)
             number //= 3
             if number in cache:
-                all.extend(cache[number])
-                return all
+                result.extend(cache[number])
+                return result
         f = 5
         while f <= int(sqrt(number)):
             while number % f == 0:
-                all.append(f)
+                result.append(f)
                 number = number // f
                 if number in cache:
-                    all.extend(cache[number])
-                    return all
+                    result.extend(cache[number])
+                    return result
             while number % (f+2) == 0:
-                all.append(f+2)
+                result.append(f+2)
                 number //= (f+2)
                 if number in cache:
-                    all.extend(cache[number])
-                    return all
+                    result.extend(cache[number])
+                    return result
             f += 6
         if number != 1:
             # this is always a prime number, add it to the cache
             cache[number] = [number]
-            all.append(number)
-    return all
+            result.append(number)
+    return result
 
 
 def factors(number, cache=None):
     primes = prime_factors(number, cache)
-    all = set(primes)
-    all.add(1)
+    result = set(primes)
+    result.add(1)
     for n in range(2, len(primes)):
         for combos in combinations(primes, n):
-            all.add(reduce(prod, combos))
-    return all
+            result.add(reduce(prod, combos))
+    return result
 
 
 def prod(x, y):
