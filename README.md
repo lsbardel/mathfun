@@ -8,7 +8,7 @@ Number theory
 
 * Prime numbers
 * Greatest common divisor ``d = GCD(a, b)``
-* ``GCD(a, b) = ua + vb``, unique ``u`` and ``v`` natural numbers
+* ``GCD(a, b) = ua + vb``, with ``u`` and ``v`` unique natural numbers
 * If prime ``p`` divides number ``ab``
     
     ab // p == 0
@@ -19,5 +19,4 @@ Number theory
 
 * If ``p`` does not divide ``a``, for statement above we have
 
-    ua + vp = 1
   
