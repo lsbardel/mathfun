@@ -43,3 +43,10 @@ and
 ```
 [0]7 = [..., -7, 0, 7, 14, ...[
 ```
+## Fermat Little Theorem
+
+If ``p`` is prime, than for any natural number ``n``
+```
+(n^p - n) % p == 0
+```
+In other words, ``n^p`` and ``n`` are congruent module ``p`` for any prime number.
