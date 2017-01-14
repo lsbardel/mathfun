@@ -2,7 +2,7 @@
 """
 
 
-def gcd(a, b):
+def gcd(a: int, b: int) -> int:
     """Greatest common divisor
 
     In python 3.5 there is a function in the standard lib:
@@ -15,8 +15,8 @@ def gcd(a, b):
     return a
 
 
-def xgcd(a, b):
-    """Extended GCD algorithm
+def xgcd(a: int, b: int) -> tuple:
+    """Extended Euclidean (GCD) algorithm
 
     gcd(a, b) = u*a + v*b
 
