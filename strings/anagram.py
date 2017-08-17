@@ -1,5 +1,4 @@
 from collections import Counter
-from functools import reduce
 from itertools import combinations
 
 
@@ -52,6 +51,17 @@ def anagrammatic_pairs(s):
     return tot
 
 
+def palindrome_anagram(S):
+    """Find an anagram of the string that is palindrome
+    """
+    visited = set()
+    for s in S:
+        if s in visited:
+            visited.remove(s)
+        else:
+            visited.add(s)
+    return len(visited) <= 1
+
+
 if __name__ == '__main__':
-    print(anagram2('cde', 'abc'))
-    print(anagrammatic_pairs('pvmupwjjjf'))
+    print(palindrome_anagram('cdefghmnopqrstuvw'))

@@ -1,0 +1,9 @@
+flake8
+coverage
+requests
+numpy
+scipy
+matplotlib
+h5py
+pillow
+jupyter
