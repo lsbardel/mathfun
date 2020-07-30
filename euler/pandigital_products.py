@@ -2,6 +2,7 @@
 """
 import time
 
+
 def pandigital_products():
     found = set()
     for i in range(2, 100):

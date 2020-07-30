@@ -18,5 +18,5 @@ def solution(N, A):
     return [counter[i] or base for i in range(N)]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(solution(5, [3, 4, 4, 6, 1, 4, 4]))

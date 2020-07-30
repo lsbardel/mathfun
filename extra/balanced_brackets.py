@@ -1,7 +1,5 @@
-
-
 def isBalanced(S):
-    close = {')': '(', ']': '[', '}': '{'}
+    close = {")": "(", "]": "[", "}": "{"}
     open = set(close.values())
     stack = []
     for c in S:
@@ -10,11 +8,11 @@ def isBalanced(S):
         elif c in close:
             if stack and stack.pop() == close[c]:
                 continue
-            return 'NO'
-    return 'NO' if stack else "YES"
+            return "NO"
+    return "NO" if stack else "YES"
 
 
-if __name__ == '__main__':
-    print('%s=Yes' % isBalanced('{[()]}'))
-    print('%s=No' % isBalanced('{[(])}'))
-    print('%s=Yes' % isBalanced('{{[[(())]]}}'))
+if __name__ == "__main__":
+    print("%s=Yes" % isBalanced("{[()]}"))
+    print("%s=No" % isBalanced("{[(])}"))
+    print("%s=Yes" % isBalanced("{{[[(())]]}}"))

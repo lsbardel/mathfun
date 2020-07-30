@@ -1,5 +1,3 @@
-
-
 def solution(N, M):
     # write your code in Python 2.7
     c = 1
@@ -27,5 +25,6 @@ def solution(N, M):
         c += 1
     return c
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     print(solution(10, 4))

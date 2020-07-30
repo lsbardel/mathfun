@@ -1,7 +1,8 @@
 """https://projecteuler.net/problem=54
 """
-from enum import Enum
 from collections import Counter
+from enum import Enum
+
 import requests
 
 numbers = dict(((str(v), v) for v in range(2, 10)))

@@ -1,8 +1,13 @@
-
-_input = list(reversed("""100000 2
+_input = list(
+    reversed(
+        """100000 2
 1 2
 3 4
-""".split('\n')))
+""".split(
+            "\n"
+        )
+    )
+)
 
 
 def input():

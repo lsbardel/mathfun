@@ -1,10 +1,10 @@
-from math import sqrt
 from functools import reduce
 from itertools import combinations
+from math import sqrt
 
 
 def is_prime(number, cache=None):
-    '''Check if a number is a prime number'''
+    """Check if a number is a prime number"""
     if number <= 1:
         return False
     elif number < 4:
@@ -26,7 +26,7 @@ def is_prime(number, cache=None):
             if number % f == 0:  # 6k-1
                 cache[number] = False
                 return False
-            if number % (f+2) == 0:  # 6k+1
+            if number % (f + 2) == 0:  # 6k+1
                 cache[number] = False
                 return False
             f += 6
@@ -73,9 +73,9 @@ def prime_factors(number, cache=None):
                 if number in cache:
                     result.extend(cache[number])
                     return result
-            while number % (f+2) == 0:
-                result.append(f+2)
-                number //= (f+2)
+            while number % (f + 2) == 0:
+                result.append(f + 2)
+                number //= f + 2
                 if number in cache:
                     result.extend(cache[number])
                     return result
@@ -98,4 +98,4 @@ def factors(number, cache=None):
 
 
 def prod(x, y):
-    return x*y
+    return x * y

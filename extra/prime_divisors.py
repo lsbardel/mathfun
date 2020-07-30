@@ -42,9 +42,9 @@ def prime_factors(number, cache):
                 if number in cache:
                     result.extend(cache[number])
                     return result
-            while number % (f+2) == 0:
-                result.append(f+2)
-                number //= (f+2)
+            while number % (f + 2) == 0:
+                result.append(f + 2)
+                number //= f + 2
                 if number in cache:
                     result.extend(cache[number])
                     return result
@@ -56,5 +56,5 @@ def prime_factors(number, cache):
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     solution([15], [75])

@@ -54,16 +54,18 @@ expected worst-case space complexity is O(N), beyond input storage (not counting
 Elements of input arrays can be modified.
 """
 
+
 def fib(l):
     a, b = 0, 1
     while b < l:
-        a, b = b, a+b
+        a, b = b, a + b
         yield b
+
 
 def solution(A):
     # write your code in Python 2.7
     N = len(A)
-    jumps = set(fib(N+2))
+    jumps = set(fib(N + 2))
     A.append(1)
     F = 0
     for j, a in enumerate(A, 1):
@@ -75,14 +77,7 @@ def solution(A):
     A[F] = N + 1
 
 
-
-
-
-
-
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     A = list(range(11))
     A[3] = A[4] = A[6] = 1
     print(solution(A))

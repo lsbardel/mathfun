@@ -14,8 +14,8 @@ def anagram2(s1, s2):
 
 
 def test_strings(size=500):
-    from random import choice, shuffle
     import string
+    from random import choice, shuffle
     letters = getattr(string, 'letters', getattr(string, 'ascii_letters', ''))
     all = [choice(letters) for c in range(size)]
     s1 = ''.join(all)
@@ -25,8 +25,8 @@ def test_strings(size=500):
 
 
 if __name__ == '__main__':
-    import timeit
     import sys
+    import timeit
     num = 100
     if len(sys.argv) > 1:
         num = int(sys.argv[1])

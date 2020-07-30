@@ -1,6 +1,5 @@
 import sys
 
-
 URL = 'https://projecteuler.net/project/resources/p067_triangle.txt'
 
 

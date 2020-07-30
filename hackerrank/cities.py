@@ -17,25 +17,26 @@ _input = """8
 6 0 0.58
 6 4 0.93 """
 
-_input = list(reversed(_input.split('\n')))
+_input = list(reversed(_input.split("\n")))
+
 
 def input():
     return _input.pop()
 
-from heapq import heappush, heappop
 
+from heapq import heappop, heappush
 
 visited = {}
 
 
 class Node:
-
     def __init__(self, number, neighbour):
         self.number = number
         self.neighbours = [neighbour]
 
     def __repr__(self):
-        return '%d%s' % (self.number, self.neighbours)
+        return "%d%s" % (self.number, self.neighbours)
+
     __str__ = __repr__
 
     def visit(self, node, skip=False):
@@ -89,10 +90,8 @@ while len(visited) < N:
             b.neighbours.append(a.number)
 
     if include:
-        print('%s %s %s ' % (a.number, b.number, d))
+        print("%s %s %s " % (a.number, b.number, d))
         total += d
 
 
 print(total)
-
-

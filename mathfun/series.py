@@ -1,7 +1,5 @@
-
-
 def fibonacci():
-    '''generartor of fibonacci numbers'''
+    """generartor of fibonacci numbers"""
     a, b, n = 0, 1, 1
     yield n, b
     while True:
@@ -13,5 +11,5 @@ def fibonacci():
 def triangle():
     n = 1
     while True:
-        yield n, n*(n+1) // 2
+        yield n, n * (n + 1) // 2
         n += 1

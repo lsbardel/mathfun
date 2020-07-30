@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "code",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "pythonPath": "${command:python.interpreterPath}",
+            "program": "${workspaceFolder}/hackerrank/non_divisible_subset.py",
+            "cwd": "${workspaceFolder}",
+            "args": [],
+            "debugOptions": [
+                "RedirectOutput"
+            ]
+        }
+    ]
+}

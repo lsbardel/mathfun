@@ -30,7 +30,8 @@ def xgcd(a: int, b: int) -> tuple:
     return a, x, y
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import sys
+
     argv = sys.argv
     print(xgcd(int(argv[1]), int(argv[2])))

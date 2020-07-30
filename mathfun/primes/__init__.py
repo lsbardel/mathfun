@@ -1,2 +1,2 @@
-from .prime_numbers import prime_factors, is_prime, factors
 from .gcd import xgcd
+from .prime_numbers import factors, is_prime, prime_factors

@@ -14,8 +14,8 @@ def next_lexo(S):
                 if b > a:
                     F = list(S)
                     F[-i], F[-j] = F[-j], F[-i]
-                    F = F[:-i+1] + sorted(F[-i+1:])
-                    return ''.join(F)
+                    F = F[: -i + 1] + sorted(F[-i + 1 :])
+                    return "".join(F)
         else:
             b = a
-    return 'no answer'
+    return "no answer"

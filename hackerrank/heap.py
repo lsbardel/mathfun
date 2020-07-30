@@ -1,4 +1,6 @@
-_input = list(reversed("""500
+_input = list(
+    reversed(
+        """500
 496366036 247523804
 521906288 633577222
 187049557 33348207
@@ -499,16 +501,19 @@ _input = list(reversed("""500
 822080980 555332460
 859784329 418796665
 532056793 844660033
-""".split('\n')))
+""".split(
+            "\n"
+        )
+    )
+)
 
 
 def input():
     return _input.pop()
 
 
-from heapq import heappush, heappop
 import math
-
+from heapq import heappop, heappush
 
 customers = []
 waiting_list = []
@@ -540,7 +545,7 @@ while customers:
                 total_waiting += ready_by - arrived1 + cooking_time1
                 ready_by += cooking_time1
 
-    heappush(waiting_list, [cooking_time-arrived, arrived, cooking_time])
+    heappush(waiting_list, [cooking_time - arrived, arrived, cooking_time])
 
 
 for t, waiting in data:
@@ -564,5 +569,5 @@ while heap:
     time += arrival_waiting - arrival + max(0, arrival - time)
 
 
-print(math.floor(total_waiting/len(data)))
+print(math.floor(total_waiting / len(data)))
 print(78537230876)

@@ -2,7 +2,6 @@ from collections import deque
 
 
 class Vertex:
-
     def __init__(self, id, score=1):
         self.id = id
         self.links = set()
@@ -10,7 +9,6 @@ class Vertex:
 
 
 class Graph:
-
     def __init__(self, directed=False):
         self.vertices = {}
         self.directed = directed

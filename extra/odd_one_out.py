@@ -1,5 +1,3 @@
-
-
 def solution(A):
     unique = set()
     for a in A:
@@ -8,5 +6,3 @@ def solution(A):
         else:
             unique.add(a)
     return unique.pop()
-
-
